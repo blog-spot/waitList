@@ -1,6 +1,6 @@
 {
   "name": "blogs-webapp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a blogs web app for users to blog about",
   "main": "index.js",
   "scripts": {
