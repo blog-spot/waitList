@@ -11,5 +11,8 @@
     "url": "https://github.com/blog-spot"
   },
   "author": "Udhay-r",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
