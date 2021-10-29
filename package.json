@@ -1,0 +1,15 @@
+{
+  "name": "blogs-webapp",
+  "version": "1.0.0",
+  "description": "a blogs web app for users to blog about",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blog-spot"
+  },
+  "author": "Udhay-r",
+  "license": "MIT"
+}
