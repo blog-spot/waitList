@@ -74,3 +74,52 @@ rem
 }
 
 /* mini span */
+.text-\[\#fff\] {
+    --tw-text-opacity: 1;
+    color: rgba(255,255,255,var(--tw-text-opacity));
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.font-bold {
+    font-weight: 700;
+}
+.text-\[0\.5rem\] {
+    font-size: .5rem;
+}
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.bg-variant-2 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(158,164,255,var(--tw-bg-opacity));
+}
+.rounded-full {
+    border-radius: 9999px;
+}
+.place-items-center {
+    place-items: center;
+}
+.h-5 {
+    height: 1.25rem;
+}
+.grid {
+    display: grid;
+}
+.left-4 {
+    left: 1rem;
+}
+.-top-2 {
+    top: -0.5rem
+;
+}
+.absolute {
+    position: absolute;
+}
+
+.movement{
+    margin-top:235px;
+    margin-left:50px;
+    
+}
