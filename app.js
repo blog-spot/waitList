@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
 app.post('/submit' , function(req,res) {
     var email=req.body.email
-    res.write('You sent your email ' + req.body.email);
+    res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
     connnetion.query("INSERT INTO waiters (email)  VALUES ('"+email+"')"), function(err , result) {
         if(err)
             throw err;

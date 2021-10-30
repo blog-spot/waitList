@@ -63,7 +63,9 @@ rem
 ;
 }
 .w-full {
-    width: 200px;
+    margin-top:50px;
+    
+    width: 500px;
 }
 .h- {
     height: 10px;
@@ -119,7 +121,10 @@ rem
 }
 
 .movement{
-    margin-top:235px;
+    margin-top:290px;
     margin-left:50px;
     
+}
+.invi{
+    color:#5e67ff;
 }
