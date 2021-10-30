@@ -29,9 +29,9 @@ app.get('/', (req, res) => {
 
 app.post('/submit' , function(req,res) {
     console.log(req.body.email);
+    res.write('You sent your email ' + req.body.email)
 
-
-})
+});
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
-})
+});
