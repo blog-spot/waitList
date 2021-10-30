@@ -33,10 +33,14 @@ app.post('/submit' , function(req,res) {
     connnetion.query("INSERT INTO waiters (email)  VALUES ('"+email+"')"), function(err , result) {
         if(err)
             throw err;
+        
 
     }
-
-    
+    fs.readFile('./views/waitList-added.ejs' , function(err,data){
+        res.writeHead(200, {'Context-type': 'text/html'});
+        res.write(data);
+        return res.end();
+      })
 });
 
 app.listen(port, () => {
