@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 
-var con = mysql.createConnection({
+var connnetion = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "cisco123!@#",
@@ -28,10 +28,17 @@ app.get('/', (req, res) => {
 })
 
 app.post('/submit' , function(req,res) {
-    console.log(req.body.email);
-    res.write('You sent your email ' + req.body.email)
+    var email=req.body.email
+    res.write('You sent your email ' + req.body.email);
+    connnetion.query("INSERT INTO waiters (email)  VALUES ('"+email+"')"), function(err , result) {
+        if(err)
+            throw err;
 
+    }
+
+    
 });
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
