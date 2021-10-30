@@ -7,6 +7,12 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
+// Static Files
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/js' , express.static(__dirname + 'public/js'))
+
+// connceting to the waitlist databse
 
 var connnetion = mysql.createConnection({
     host: "localhost",
