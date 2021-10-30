@@ -32,3 +32,45 @@
 .mt-5 {
     margin-top: 1.25rem;
 }
+
+
+
+
+.ring-variant-2 {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(158,164,255,var(--tw-ring-opacity));
+}
+.outline-none {
+    outline: 2px solid transparent;
+
+    outline-offset: 2px;
+
+}
+.text-hullo {
+    --tw-text-opacity: 1;
+    color: rgba(0,0,0,var(--tw-text-opacity));
+}
+.p-4 {
+    padding: 1rem;
+}
+.bg-fff, .bg-fg {
+    --tw-bg-opacity: 1;
+    background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+.rounded-lg {
+    border-radius: 0.5
+rem
+;
+}
+.w-full {
+    width: 200px;
+}
+.h- {
+    height: 10px;
+}
+
+.rounded{
+    border-radius: 5rem;
+}
+
+/* mini span */
