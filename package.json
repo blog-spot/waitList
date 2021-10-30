@@ -2,7 +2,7 @@
   "name": "blogs-webapp",
   "version": "1.1.0",
   "description": "a blogs web app for users to blog about",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
