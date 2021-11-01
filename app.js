@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-// changes..
+// changes.. heroku push
 const port = process.env.port || 3000;
 const fs = require('fs')
 const mysql = require('mysql')
