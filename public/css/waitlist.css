@@ -167,3 +167,9 @@ rem
 .mt-2 {
     margin-top: 0.5rem;
 }
+
+
+.bg-nav{
+    background-color:transparent;
+    border-color:transparent;
+}
