@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = procees.env.port || 3000;
 const fs = require('fs')
 const mysql = require('mysql')
 const bodyParser = require('body-parser');
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
         return res.end();
       })
 })
-
+// posts to the sql databse
 app.post('/submit' , function(req,res) {
     var email=req.body.email
     res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
@@ -44,6 +44,8 @@ app.post('/submit' , function(req,res) {
     res.end()
  
 });
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
