@@ -5,6 +5,7 @@ const fs = require('fs')
 const mysql = require('mysql')
 const bodyParser = require('body-parser');
 
+
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 // Static Files
