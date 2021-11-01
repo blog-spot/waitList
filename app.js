@@ -48,6 +48,6 @@ app.post('/submit' , function(req,res) {
 
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
+  console.log(`server is running`)
 });
