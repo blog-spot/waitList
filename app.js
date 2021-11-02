@@ -45,6 +45,8 @@ app.post('/submit' , function(req,res) {
  
 });
 
+// writing api functions here.
+
 
 
 app.listen(process.env.PORT || port, '0.0.0.0', () => {
