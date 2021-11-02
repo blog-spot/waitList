@@ -6,6 +6,28 @@ const fs = require('fs')
 const mysql = require('mysql')
 const bodyParser = require('body-parser');
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAjj2kLmohkznSmQ_QOO1oqQF7zeHmgPIM",
+  authDomain: "devgram-109cb.firebaseapp.com",
+  projectId: "devgram-109cb",
+  storageBucket: "devgram-109cb.appspot.com",
+  messagingSenderId: "11976664737",
+  appId: "1:11976664737:web:70ff28b50d66f0e14c32e0",
+  measurementId: "G-H50D2PCX8G"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
