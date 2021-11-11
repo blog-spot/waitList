@@ -6,7 +6,7 @@ const fs = require('fs')
 const sql = require('mssql')
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
-
+// azure dev
 // Static Files
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
