@@ -3,7 +3,7 @@ const app = express()
 // changes.. heroku push
 const port = process.env.port || 3000;
 const fs = require('fs')
-const mysql = require('mysql')
+const sql = require('mssql')
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
@@ -29,7 +29,7 @@ var dbConfig = {
    };
 function Conncet(){
        
-    var conn = new sql.ConnectionPool(connnetion);
+    var conn = new sql.ConnectionPool(dbConfig);
    
     conn.connect(
         function (err) { 
@@ -41,6 +41,17 @@ function Conncet(){
         {
            console.log("Connection established.");
         }
+    });
+
+    app.post('/submit' , function(req,res) {
+        var email=req.body.email
+        res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
+        conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
+            if(err)
+                throw err;
+        }
+        res.end()
+     
     });
     
    
@@ -60,16 +71,7 @@ app.get('/', (req, res) => {
       })
 })
 // posts to the sql databse
-app.post('/submit' , function(req,res) {
-    var email=req.body.email
-    res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
-    connnetion.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
-        if(err)
-            throw err;
-    }
-    res.end()
- 
-});
+
 
 
 // writing api functions here.
