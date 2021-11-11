@@ -15,13 +15,39 @@ app.use('/images' , express.static(__dirname + 'public/images'))
 
 // connceting to the waitlist databse
 
-var connnetion = mysql.createConnection({
-    host: "dev-gram.database.windows.net",
-    user: "Udhay",
-    password: "cisco123!@#",
-    database: "devgram"
-});
 
+var dbConfig = {
+    server: "dev-gram.database.windows.net", // Use your SQL server name
+    database: "devgram", // Database to connect to
+    user: "Udhay", // Use your username
+    password: "cisco123!@#", // Use your password
+    port: 1433,
+    // Since we're on Windows Azure, we need to set the following options
+    options: {
+          encrypt: true
+      }
+   };
+function Conncet(){
+       
+    var conn = new sql.ConnectionPool(connnetion);
+   
+    conn.connect(
+        function (err) { 
+        if (err) { 
+            console.log("!!! Cannot connect !!! Error:");
+            throw err;
+        }
+        else
+        {
+           console.log("Connection established.");
+        }
+    });
+    
+   
+      }
+   
+   Conncet();
+   
 
 
 app.set('view engine', 'ejs');
