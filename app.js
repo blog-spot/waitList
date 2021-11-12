@@ -77,6 +77,5 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(process.env.PORT || port, '0.0.0.0', () => {
-  console.log(`server is running`)
-});
+app.listen(port)
+console.log("server running." , port);
