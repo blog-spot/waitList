@@ -61,7 +61,9 @@ app.get('/', (req, res) => {
         res.write(data);
         return res.end();
       })
-})
+}
+
+)
 // posts to the sql databse
 app.post('/submit' , (req,res) => {
     var email=req.body.email
