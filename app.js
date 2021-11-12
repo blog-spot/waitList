@@ -15,48 +15,48 @@ app.use('/images' , express.static(__dirname + 'public/images'))
 // connceting to the waitlist databse
 
 
-var dbConfig = {
-    server: "dev-gram.database.windows.net", // Use your SQL server name
-    database: "devgram", // Database to connect to
-    user: "Udhay", // Use your username
-    password: "cisco123!@#", // Use your password
-    port: 1433,
-    // Since we're on Windows Azure, we need to set the following options
-    options: {
-          encrypt: true
-      }
-   };
-function Conncet(){
+// var dbConfig = {
+//     server: "dev-gram.database.windows.net", // Use your SQL server name
+//     database: "devgram", // Database to connect to
+//     user: "Udhay", // Use your username
+//     password: "cisco123!@#", // Use your password
+//     port: 1433,
+//     // Since we're on Windows Azure, we need to set the following options
+//     options: {
+//           encrypt: true
+//       }
+//    };
+// function Conncet(){
        
-    var conn = new sql.ConnectionPool(dbConfig);
+//     var conn = new sql.ConnectionPool(dbConfig);
    
-    conn.connect(
-        function (err) { 
-        if (err) { 
-            console.log("!!! Cannot connect !!! Error:");
-            throw err;
-        }
-        else
-        {
-           console.log("Connection established.");
-        }
-    });
+//     conn.connect(
+//         function (err) { 
+//         if (err) { 
+//             console.log("!!! Cannot connect !!! Error:");
+//             throw err;
+//         }
+//         else
+//         {
+//            console.log("Connection established.");
+//         }
+//     });
 
-    app.post('/submit' , function(req,res) {
-        var email=req.body.email
-        res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
-        conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
-            if(err)
-                throw err;
-        }
-        res.end()
+//     app.post('/submit' , function(req,res) {
+//         var email=req.body.email
+//         res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
+//         conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
+//             if(err)
+//                 throw err;
+//         }
+//         res.end()
      
-    });
+//     });
     
    
-      }
+//       }
    
-   Conncet();
+//    Conncet();
    
 
 
