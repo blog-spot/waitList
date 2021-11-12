@@ -42,14 +42,7 @@ app.use('/images' , express.static(__dirname + 'public/images'))
 //         }
 //     });
 
-//     app.post('/submit' , function(req,res) {
-//         var email=req.body.email
-//         res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
-//         conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
-//             if(err)
-//                 throw err;
-//         }
-//         res.end()
+
      
 //     });
     
@@ -70,6 +63,16 @@ app.get('/', (req, res) => {
       })
 })
 // posts to the sql databse
+app.post('/submit' , (req,res) => {
+    var email=req.body.email
+    res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
+    // conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
+    //     if(err)
+    //         throw err;
+    // }
+    res.end()
+})
+
 
 
 
