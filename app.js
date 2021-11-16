@@ -1,4 +1,5 @@
 const express = require('express')
+
 const app = express()
 // changes.. heroku push
 const port = process.env.port || 3000;
@@ -16,41 +17,33 @@ app.use('/images' , express.static(__dirname + 'public/images'))
 
 
 // var dbConfig = {
-//     server: "dev-gram.database.windows.net", // Use your SQL server name
-//     database: "devgram", // Database to connect to
-//     user: "Udhay", // Use your username
+//     host: "localhost", // Use your SQL server name
+//     database: "Devgram-Waitlist", // Database to connect to
+//     user: "admin", // Use your username
 //     password: "cisco123!@#", // Use your password
-//     port: 1433,
 //     // Since we're on Windows Azure, we need to set the following options
-//     options: {
-//           encrypt: true
-//       }
 //    };
-// function Conncet(){
-       
-//     var conn = new sql.ConnectionPool(dbConfig);
+
+//     function Connect(){
+
+//         var conn = new sql.ConnectionPool(dbConfig);
    
-//     conn.connect(
-//         function (err) { 
-//         if (err) { 
-//             console.log("!!! Cannot connect !!! Error:");
-//             throw err;
-//         }
-//         else
-//         {
-//            console.log("Connection established.");
-//         }
-//     });
+//         conn.connect(
+//             function (err) { 
+//             if (err) { 
+//                 console.log("!!! Cannot connect !!! Error:");
+//                 throw err;
+//             }
+//             else
+//             {
+//                console.log("Connection established.");
+//             }
 
+//             })
+//         }
 
-     
-//     });
+//         Connect();
     
-   
-//       }
-   
-//    Conncet();
-   
 
 
 app.set('view engine', 'ejs');
