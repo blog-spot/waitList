@@ -1,5 +1,17 @@
 const express = require('express')
 
+
+const uri = "mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect("mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+}
+
+
 const app = express()
 // changes.. heroku push
 const port = process.env.port || 3000;
@@ -12,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/images' , express.static(__dirname + 'public/images'))
+
 
 // connceting to the waitlist databse
 
@@ -45,6 +58,11 @@ app.use('/images' , express.static(__dirname + 'public/images'))
 //         Connect();
     
 
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 app.set('view engine', 'ejs');
 
