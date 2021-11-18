@@ -1,15 +1,25 @@
 const express = require('express')
 
-
-const uri = "mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-
 const mongoose = require('mongoose');
 
-main().catch(err => console.log(err));
+mongoose.connect('mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/Waitlist?retryWrites=true&w=majority');
+var db=mongoose.connection;
+db.on('error', console.log.bind(console, "connection error"));
+db.once('open', function(callback){
+    console.log("connection succeeded");
+})
+  
 
-async function main() {
-  await mongoose.connect("mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-}
+// const uri = "";
+
+// const mongoose = require('mongoose');
+
+// main().catch(err => console.log(err));
+
+// async function main() {
+//   await mongoose.connect("mongodb+srv://Udhay:udhay123@devgram.x4ikw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+// }
+
 
 
 const app = express()
@@ -75,15 +85,21 @@ app.get('/', (req, res) => {
 })
 
 
+
 // posts to the sql databse
 app.post('/submit' , (req,res) => {
-    var email=req.body.email
-    res.write('You sent your email! You have been added to the waitlist!' + req.body.email);
-    // conn.query("INSERT INTO [dbo].[users] (email)  VALUES ('"+email+"')"), function(err , result) {
-    //     if(err)
-    //         throw err;
-    // }
-    res.end()
+    var email = req.body.email;
+
+    var data ={
+        "email": email
+    }
+
+    db.collection('details').insertOne(data,function(err, collection){
+        if (err) throw err;
+        console.log("Record inserted Successfully");
+    });
+
+
 })
 
 
